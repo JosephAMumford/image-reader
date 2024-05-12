@@ -6,6 +6,6 @@ func main() {
 
 	bmpFile := formats.BMP{}
 
-	bmpFile.LoadFile("samples/simple.bmp")
+	bmpFile.LoadFile("samples/cat-dragon.bmp")
 	bmpFile.Render()
 }
