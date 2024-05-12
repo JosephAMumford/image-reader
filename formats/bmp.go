@@ -49,6 +49,12 @@ func (b *BMP) LoadFile(filename string) {
 	bytesRead, err := f.Read(id)
 	check(err)
 	b.Id = string(id)
+
+	if b.Id != "BM" && b.Id != "BA" && b.Id != "CI" && b.Id != "CP" && b.Id != "IC" && b.Id != "PT" {
+		fmt.Println("Not a BMP file")
+		return
+	}
+
 	currentOffset += bytesRead
 
 	//Filesize
@@ -185,12 +191,13 @@ func (b *BMP) LoadFile(filename string) {
 	check(err)
 }
 
-func (b *BMP) Render() {
+// Use single char as string
+func (b *BMP) Render(char string) {
 	//Y starts at the end because BMP data is load bottom to top, left to right
 	for y := int(b.VerticalWidth) - 1; y > -1 ; y-- {
 		for x := 0; x < int(b.HorizontalWidth); x++ {
 			index := y * (int(b.HorizontalWidth) * 3) + (x * 3)
-			color.RGB(b.PixelData[index + 2],b.PixelData[index + 1],b.PixelData[index]).Print("\u2588")
+			color.RGB(b.PixelData[index + 2],b.PixelData[index + 1],b.PixelData[index]).Print(char)
 		}
 		fmt.Print("\n")
 	}
