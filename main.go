@@ -15,6 +15,7 @@ func main() {
 	bmpFile := formats.BMP{}
 
 	bmpFile.LoadFile("samples/cat-dragon.bmp")
+	bmpFile.Print()
 
 	scanner := bufio.NewScanner(os.Stdin)
 

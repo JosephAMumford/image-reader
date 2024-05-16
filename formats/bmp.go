@@ -204,5 +204,18 @@ func (b *BMP) Render(char string) {
 }
 
 func (b * BMP) Print() {
-	fmt.Println(b)
+	fmt.Printf("Id: %s \n", b.Id)
+	fmt.Printf("Filesize: %d \n", b.Filesize)
+	fmt.Printf("Offset: %d \n", b.Offset)
+	fmt.Printf("BitMapInfoHeader: %d \n", b.BitMapInfoHeader)
+	fmt.Printf("Horizontal Width: %d \n", b.HorizontalWidth)
+	fmt.Printf("Vertical Width: %d \n", b.VerticalWidth)
+	fmt.Printf("Number of Planes: %d \n", b.NumberOfPlanes)
+	fmt.Printf("Bits Per Pixel: %d \n", b.BitsPerPixel)
+	fmt.Printf("Compression Type: %d \n", b.CompressionType)
+	fmt.Printf("Size In bytes: %d \n", b.SizeInBytes)
+	fmt.Printf("Horizontal Resolution: %d \n", b.HorizontalResolution)
+	fmt.Printf("Vertical Resolution: %d \n", b.VerticalResolution)
+	fmt.Printf("Number of Used Colors: %d \n", b.NumberOfUsedColors)
+	fmt.Printf("Number Of Important Colors: %d \n", b.NumberOfImportantColors)
 }
